@@ -1,0 +1,114 @@
+---
+title: faster-whisper模型手动下载的办法
+date: 2025-10-12 15:33:00
+description: 如果你希望自己手动从 huggingface.co 下载，然后复制到软件的模型目录下使用，那么可继续阅读本文
+---
+
+
+> 本文介绍下载使用  **faster-whisper[本地]** 语音识别渠道下载模型失败后，想自己手动从 huggingface 网站下载的办法，
+
+**确保已升级到 v3.91 版本**
+
+使用  **faster-whisper[本地]**  语音识别渠道时，需要从 墙外网站  `https://huggingface.co` 下载模型或从国内镜像 `https://hf-mirror.com` 下载。前者需科学上网，且代理工具需稳定可靠，否则很容易失败。后者镜像站本身似乎网络不太稳定，经常下载超时失败。
+
+
+![](https://pvtr2.pyvideotrans.com/1760345848384_image.png)
+
+
+## 手动下载 faster-whisper(本地) 渠道的模型
+
+> 请根据你想使用的模型选择，最佳模型是 `large-v3`, 未使用CUDA加速时，需保证内存不低于16G，CUDA加速请保证显存大于10G
+
+- **下载 tiny 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-tiny` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-tiny/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 tiny.en 模型(仅可识别英语发音)**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-tiny.en` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-tiny.en/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 base 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-base` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-base/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 base.en 模型(仅可识别英语发音)**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-base.en` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-base.en/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 small 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-small` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-small/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 small.en 模型(仅可识别英语发音)**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-small.en` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-small.en/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 medium 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-medium` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-medium/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 medium.en 模型(仅可识别英语发音)**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-medium.en` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-medium.en/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+
+- **下载 large-v3-turbo 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--mobiuslabsgmbh--faster-whisper-large-v3-turbo` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/mobiuslabsgmbh/faster-whisper-large-v3-turbo/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+
+- **下载 large-v1 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-large-v1` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-large-v1/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 large-v2 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-large-v2` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-large-v2/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 large-v3 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-whisper-large-v3` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-whisper-large-v3/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+
+----
+
+**以下蒸馏模型，仅可用于识别转录英语发音的音视频**
+
+
+- **下载 distil-large-v3 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-distil-whisper-large-v3` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-distil-whisper-large-v3/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+- **下载 distil-large-v3.5 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--distil-whisper--distil-large-v3.5-ct2` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/distil-whisper/distil-large-v3.5-ct2/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 distil-small.en 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-distil-whisper-small.en` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-distil-whisper-small.en/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 distil-medium.en 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-distil-whisper-medium.en` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-distil-whisper-medium.en/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+- **下载 distil-large-v2 模型**：
+  1. 创建文件夹：在 `sp.exe(sp.py)` 同目录下的 `models` 文件夹内创建`models--Systran--faster-distil-whisper-large-v2` 文件夹
+  2. 打开模型下载地址： https://huggingface.co/Systran/faster-distil-whisper-large-v2/tree/main
+  3. 将该页面的所有 .json/.bin/.txt 文件下载后复制到上面创建文件夹内即可，若已存在可直接覆盖。
+
+

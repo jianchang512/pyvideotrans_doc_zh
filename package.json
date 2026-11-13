@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "type": "module",
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.25"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "vitepress-plugin-comment-with-giscus": "^1.1.12"
+  }
+}

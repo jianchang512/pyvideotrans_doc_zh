@@ -1,0 +1,12 @@
+*.srt
+node_modules
+.idea
+.vitepress/cache
+images
+public
+*.py
+*.bat
+.vitepress/dist
+.vitepress/dist-git
+.vitepress/theme
+.vitepress/cache
