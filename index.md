@@ -80,7 +80,7 @@ features:
 
 ### 软件界面
 
-![](https://pvtr2.pyvideotrans.com/1785392972229_1.png)
+![](https://pvtr2.pyvideotrans.com/1794901542042_image.png)
 
 ![](https://pvtr2.pyvideotrans.com/1785392967672_3.png)
 

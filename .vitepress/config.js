@@ -71,6 +71,9 @@ export default defineConfig({
   themeConfig: {
 	logo:"https://pvtr2.pyvideotrans.com/images/logo.png",
 	siteTitle:"pyVideoTrans",
+	editLink: {
+      pattern: 'https://github.com/jianchang512/pyvideotrans_doc_zh/edit/main/:path'
+    },
 	outlineTitle: 'Title', // 大纲标题
 	outline: 'deep', // 大纲显示层级：number：只显示 | [number, number]：指定层级范围显示 | 	'deep'：全部显示 | false：不显示
     nav: [

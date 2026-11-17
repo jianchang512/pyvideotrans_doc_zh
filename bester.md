@@ -21,7 +21,7 @@ description: 每个处理阶段的最优配置推荐
 | 免费推荐 | faster-whisper(内置) | large-v3 | 速度与质量兼顾 |
 | 免费备选 | openai-whisper(内置) | large-v3 | 准确度略高但速度略慢 |
 | 免费备选 | Nemotron-3.5-asr-0.6b(内置) | - | 速度较快，拉丁语系为主，也支持日韩越 |
-| 免费备选 | whipser.cpp(Win内置) | large-v3 | 速度较快，win内置 |
+| 免费备选 | Audio.cpp | qwen-asr等| Q8量化模型 |
 | 收费推荐 | OpenAI 语音识别 API| — | 效果优秀 |
 
 
@@ -32,7 +32,7 @@ description: 每个处理阶段的最优配置推荐
 | 免费推荐 | Qwen-ASR(内置) | 1.7B | 中文效果佳 |
 | 免费备选 | 阿里FunASR(内置) | paraformer-zh/sensevoice-small | 中文效果佳 |
 | 免费备选 | Firered中文(内置) | 小红书中文及中文方言 | 纯CPU运行 |
-| 免费备选 | Huggingface_ASR(内置) | zai-org/GLM-ASR-Nano-2512 | 智谱AI模型中文效果佳 |
+| 免费备选 | Audio.cpp | qwen-asr/fun-asr等| Q8量化模型 |
 | 收费推荐 | 豆包语音识别大模型极速版/DeepSeek语音识别API  | — | 中文效果佳，在线API |
 | 收费推荐 | 小米 mimo-v2.5-asr | — | 中文效果佳，在线API |
 | 收费备选 | 阿里百炼 ASR | — | 中文较佳，在线API |
@@ -97,7 +97,7 @@ description: 每个处理阶段的最优配置推荐
 | 配置级别 | 渠道 | 说明 |
 |---------|------|------|
 | 免费 | Edge-TTS | 微软免费接口，效果自然，支持所有语种 |
-| 本地 | Qwen-TTS、F5-TTS、OmniVoice、Confucius| 内置，支持克隆 |
+| 本地 | Qwen-TTS、F5-TTS、OmniVoice、Confucius、Audio.cpp| 内置，支持克隆 |
 | 收费 | 豆包语音合成2.0 / DeepSeek语音合成API  / Qwen-TTS(bailian) / 小米 / Minimaxi / OpenAI-TTS | 高质量商业 API |
 | 克隆 | OmniVoice / Confucius / Qwen-TTS / GPT-SOVITS / CosyVoice / F5-TTS / Index-TTS / ChatterBox / ZipVoice / FireRed3-TTS | 使用原视频音色 |
 
@@ -147,21 +147,6 @@ description: 每个处理阶段的最优配置推荐
 
 ---
 
-## 常见问题
-
-### Q: 无损视频输出的条件？
-
-原始视频编码为 H.264 MP4 + 不勾选视频慢速 + 不嵌入硬字幕 + 编码选择 264。
-
-### Q: 处理速度很慢？
-
-1. 确保已启用 GPU 加速（CUDA）
-2. 使用较小的模型
-3. 确保显卡驱动已更新
-
-### Q: 如何使用 GPU 加速？
-
-确保已安装 NVIDIA 显卡驱动、CUDA 12.8 和 cuDNN 9.11，然后在主界面勾选「CUDA 加速」。AMD 显卡不支持 CUDA 加速。
 
 ---
 

@@ -5,7 +5,9 @@ description: pyVideoTrans 视频翻译软件的完整使用教程
 
 # 使用文档-全面指南
 
-> 本页面文档匹配 `v4.18` 版本
+> 本页面文档匹配 `v4.19` 版本
+
+![](https://pvtr2.pyvideotrans.com/1794901542042_image.png)
 
 **核心功能：视频翻译 / 语音转录 / 文字配音 / 翻译字幕**
 
@@ -14,7 +16,6 @@ description: pyVideoTrans 视频翻译软件的完整使用教程
 *   **语音合成/文字配音**：利用多种本地TTS模型或在线API，为字幕 或 文本生成高质量的配音 *(左侧功能面板:文字配音)*
 *   **翻译字幕**：支持批量翻译 SRT 字幕文件，保留原有时间码和格式 *(左侧功能面板:翻译字幕)*
 
-<video loading="lazy" src="https://pvtr2.pyvideotrans.com/demo0619.mp4" controls ></video>
 
 
 :::details 问: 软件是否收费或需订阅？
@@ -52,9 +53,6 @@ description: pyVideoTrans 视频翻译软件的完整使用教程
 ## 一、软件工作原理
 
 本软件的核心功能是 **翻译视频** ，将一种语言的视频 翻译为 另一个语言发音和字幕的视频：
-
-![](https://pvtr2.pyvideotrans.com/1789463044200_image.png)
-
 
 1. **语音转录/识别**：像听写员一样，把视频里人物说的话逐字听写成字幕
 2. **字幕翻译**：把听写出来的字幕翻译成目标语言字幕
@@ -141,7 +139,7 @@ Windows 默认会隐藏后缀名，导致你分不清哪个是视频、音频或
 
 ## 三、界面概览
 
-![](https://pvtr2.pyvideotrans.com/1785392972229_1.png)
+![](https://pvtr2.pyvideotrans.com/1794901542042_image.png)
 
 启动软件后，主界面从上到下分为以下几行：
 
@@ -353,6 +351,7 @@ Windows 默认会隐藏后缀名，导致你分不清哪个是视频、音频或
 | `DeepSeek` | DeepSeek的语音合成付费API，国内推荐尝试 |
 | `F5-TTS(内置)` | 中英法德意日韩越等，支持克隆 |
 | [fish.audio](/fishaudioapi) | 在线配音服务，可作为 Elevenlabs.io 的平替，效果较好，需到 fish.audio 网站开通会员 |
+| deepseek | 在线配音服务，v4.19起可用，支持20+语言 |
 | `OmniVoice(内置)` | 支持所有内置语言，支持克隆 |
 | `Confucius(内置)` | 支持中英等14种语言，支持克隆 |
 | `ChatterBox(内置)` | 拉丁语系为主，支持克隆 |
@@ -410,10 +409,10 @@ Windows 默认会隐藏后缀名，导致你分不清哪个是视频、音频或
 
 ### 步骤 6：开始执行
 
-![](https://pvtr2.pyvideotrans.com/1786698082806_image.png)
+![](https://pvtr2.pyvideotrans.com/1794902202239_image.png)
 - **`导入发音语言srt`**：如果已有原始srt字幕，不想再次识别，可点击该按钮导入，注意仅单视频模式有效
 - **`导入目标语言srt`**：如果已有翻译好的目标语言srt字幕，不想再次翻译，可点击该按钮导入，注意仅单视频模式有效
-- **`启用硬件加速`**：如果你有英伟达显卡，并且配置好了 CUDA12.8 和 cuDNN9，可选中，语音识别阶段速度数倍提升（v4.19起faster-whipser/audio.cpp等部分渠道支持基于vulkan使用非N卡加速）
+- **`启用硬件加速`**：该复选框后会显示`可用硬件加速器列表`，如果你有英伟达显卡，可选中硬件加速和CUDA，语音识别阶段速度数倍提升。**v4.19** 起 `faster-whipser/audio.cpp/whipser_cpp` 等部分渠道可选中硬件加速器列表中的`vulkan`使用 AMD/Intel 显卡加速。
 - **`开始执行`**：点击开始执行按钮，底部进度条实时显示进度，点击打开输出文件夹，完成后翻译视频自动保存到输出文件夹。
 
 ![](https://pvtr2.pyvideotrans.com/1786699282500_image.png)
@@ -635,12 +634,6 @@ Windows 默认会隐藏后缀名，导致你分不清哪个是视频、音频或
 
 
 
-### Q: 处理速度很慢？
-
-1. 确保已启用硬件加速（CUDA）
-2. 使用较小的模型
-3. 确保显卡驱动已更新
-
 ### Q: 识别结果不准确？
 
 1. 检查「发音语言」是否选择正确
@@ -661,9 +654,6 @@ Windows 默认会隐藏后缀名，导致你分不清哪个是视频、音频或
 2. 将编码从 264 改为 265
 3. 关闭「视频慢速」
 
-### Q: 如何使用 GPU 加速？
-
-确保已安装 NVIDIA 显卡驱动、CUDA 12.8 和 cuDNN 9.11，然后在主界面勾选「CUDA 加速」。v4.19后其他显卡(amd/intel)支持通过 vulkan加速(faster-whisper/audio.cpp等部分渠道)。
 
 ### Q: 无损视频输出的条件？
 
@@ -687,6 +677,15 @@ Windows 默认会隐藏后缀名，导致你分不清哪个是视频、音频或
 6. 根目录下创建 `crf.txt`, 视频慢速时的切片 crf 值，默认 18，越小清晰度越高，但处理越慢，所需硬盘空间越大
 7. 根目录下创建 `preset.txt`, 视频慢速时的切片 preset 值 'ultrafast', 'veryfast', 'medium', 'slow' 4选1，默认 veryfast，向右处理越来越慢但尺寸略小，向左反之
 8. 根目录下创建 `huggingface.txt`, 强制从 huggingface.co 下载模型，不走国内镜像站(但某些仅存在于modelscope.cn的模型仍会从源站下载)
+
+
+### Q: 如何使用硬件加速
+
+若有英伟达显卡，可选中`启用硬件加速`，使用`CUDA`加速运行，自 `v4.19` 起，硬件加速开始支持基于 vulkan 使用 AMD/Intel 显卡。
+通过选中`启用硬件加速`+`auto/vulkan`可启用，但需注意，目前只有`faster-whisper`渠道和`Audio.cpp`渠道支持`vulkan`硬件加速
+
+在使用 `faster-whisper`渠道时，如果选中了`启用硬件加速`+`vulkan`，将自动使用 whisper_cpp+ggml模型，以便使用硬件加速
+
 
 ---
 

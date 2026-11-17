@@ -10,7 +10,7 @@ description: 自 **v4.16** 版本起，软件新增了轻量、高效的本地 T
 ![](https://pvtr2.pyvideotrans.com/1791795502294_image.png)
 
 
-自 **v4.16** 版本起，软件新增了轻量、高效的本地 TTS 后端 **[audio.cpp](https://github.com/0xShug0/audio.cpp)**。该后端支持多款顶尖的开源语音模型，主要用于**本地声音克隆**以及**通过参考音频进行文字配音**。
+自 **v4.16** 版本起，软件新增了轻量、高效的本地 TTS 后端和 语音识别后端 **[audio.cpp](https://github.com/0xShug0/audio.cpp)**。该后端支持多款顶尖的开源语音模型，主要用于**本地声音克隆**以及**通过参考音频进行文字配音**。
 
 ---
 
@@ -25,14 +25,14 @@ description: 自 **v4.16** 版本起，软件新增了轻量、高效的本地 T
 audio.cpp 需要系统底层二进制执行文件（`audiocpp_cli`）的支持：
 
 ### 1. 自动下载（推荐）
-* **Windows / macOS**：软件内置了自动下载机制，首次使用时会自动下载适配当前系统的预编译包：
-  * Windows 默认自动下载：`bin-windows-x64-cuda12.4.zip`
+* **Windows / Linux / macOS**：软件内置了自动下载机制，首次使用时会自动下载适配当前系统的预编译包：
+  * Windows 默认自动下载：`bin-windows-x64-cuda12.4.zip`和`bin-windows-x64-vulkan.zip`
   * macOS 默认自动下载：`bin-macos-arm64-metal.tar.gz`
-* **Linux / Ubuntu**：暂不支持自动下载，需按下方步骤手动配置。
+* **Linux **：自动下载`ubuntu-x64-vulkan.tar.gz`
 
 ### 2. 手动下载与特殊配置
 
-如果自动下载较慢，或想使用其他显卡如intel/amd显卡加速，可前往 [audio.cpp 官方 Releases](https://github.com/0xShug0/audio.cpp/releases) 手动下载：
+如果自动下载较慢，可前往 [audio.cpp 官方 Releases](https://github.com/0xShug0/audio.cpp/releases) 手动下载：
 
 ![](https://pvtr2.pyvideotrans.com/1791795568169_image.png)
 
@@ -58,14 +58,9 @@ audio.cpp 需要系统底层二进制执行文件（`audiocpp_cli`）的支持�
 
 ## 二、配置与使用
 
-### 1. 打开配置界面
-在软件顶部菜单栏点击：**TTS设置 → Audio.cpp**。
-![](https://pvtr2.pyvideotrans.com/1791795479787_image.png)
 
-
-### 2. 功能操作说明
-* **选择配音模型**：下拉菜单中可选择你想使用的模型（默认推荐 `omnivoice`）。切换模型时，下方会实时提示该模型当前支持的语言。
-* **测试 (Test)**：
+### 功能操作说明
+* **选择配音模型**：下拉菜单中可选择你想使用的模型（默认推荐 `omnivoice`）。：
   > 💡 **测试注意事项**：audio.cpp 属于声音克隆引擎，测试时需要调用参考音频。软件会自动读取你之前在 **F5-TTS** 中添加的参考音频。如果提示 *“No reference audio exists”*，请先在声音克隆设置中添加至少一条参考音频再点击测试。
 * **保存 (Save)**：保存当前选择的模型并关闭窗口。
 
